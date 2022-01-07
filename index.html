@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <div>
+        <label for="select">Select Metric size </label>
+        <select id="select" onchange="getOption()" autofocus>
+            <option>Please select and option</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+    </div>
+    <script>
+        function getOption() {
+            var metricSize = document.getElementById("select").value
+            console.log(typeof metricSize)
+
+        }
+        var input1 = [[1, 2, 3, 19], [4, 5, 6, 20], [7, 8, 9, 21]];
+        var input2 = [[10, 11, 12, 22], [13, 14, 15, 23], [16, 17, 18, 24]];
+        var input3 = []
+
+        if (input1.length > input2.length) {
+            for (var k = 0; k < input1.length; k++) {
+                input3.push([])
+            }
+        }
+        else {
+            for (var k = 0; k < input2.length; k++) {
+                input3.push([])
+            }
+        }
+        for (var i = 0; i < input1.length; i++) {
+            for (var j = 0; j < input1[i].length; j++) {
+                console.log(`input1: ${input1[i][j]}   input1: ${input2[i][j]}`)
+                input3[i].push(input1[i][j] + input2[i][j])
+            }
+        }
+        console.log(input3.length)
+        console.log(`input3 => ${input3}`)
+    </script>
+</body>
+
+</html>
